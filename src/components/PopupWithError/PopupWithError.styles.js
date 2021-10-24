@@ -52,7 +52,7 @@ export const Title = styled.h2`
 export const Text = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 15px 15px 30px;
+  margin: 30px auto 30px;
   font-size: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   width: max-content;
@@ -60,14 +60,3 @@ export const Text = styled.div`
   font-weight: 700;
   max-width: 500px;
 `;
-
-// export const Name = styled.h1`
-//   font-size: 20px;
-
-// `;
-
-// export const Name = styled.h1`
-//   font-size: 20px;
-
-// `;
-

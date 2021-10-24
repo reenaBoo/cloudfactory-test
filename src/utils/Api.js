@@ -16,6 +16,13 @@ class Api {
     })
       .then(this._checkStatus);
   }
+
+  getDataSecond() {
+    return fetch(`${this._url}`, {
+      method: 'GET'
+    })
+      .then(this._checkStatus);
+  }
 }
 
 export const api = new Api({

@@ -1,6 +1,7 @@
-.page__container {
-  max-width: 100%;
-  min-width: 320px;
+import styled from "styled-components";
+
+export const PageContainer = styled.div`
+  width: 1280px;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -13,5 +14,4 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  min-height: 100vh;
-}
+`;

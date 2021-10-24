@@ -1,1 +1,5 @@
-@import url(./blocks/page/__container/page__container.css);
+.body {
+  background-color: #faeedd;
+  height: 100%;
+  margin: 0;
+}
