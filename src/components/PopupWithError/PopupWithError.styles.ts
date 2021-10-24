@@ -11,11 +11,11 @@ export const Root = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background:rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
 `;
 
 export const Popup = styled.div`
-  background-color: #D1E0F1;
+  background-color: #d1e0f1;
   position: relative;
   width: 600px;
   height: 400px;
@@ -54,9 +54,9 @@ export const Text = styled.div`
   justify-content: space-between;
   margin: 30px auto 30px;
   font-size: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: max-content;
-  line-height: 1.30;
+  line-height: 1.3;
   font-weight: 700;
   max-width: 500px;
 `;
