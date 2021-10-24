@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+## **Тестовое задание**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **На позицию front-end разработчик компании CloudFactory**
+
+| Применены следующие навыки: |
+| --------------------------- |
+| HTML5                       |
+| Styled-Components           |
+| JavaScript                  |
+| React                       |
+
+##### ♦ Ссылка на исполнителя
+
+Karina Lyapina - [GitHub](https://github.com/reenaBoo).
 
 ## Available Scripts
 
