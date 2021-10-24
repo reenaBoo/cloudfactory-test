@@ -18,14 +18,12 @@ function TabB({ isPopupOpen, setIsPopupOpen, isPopupErrorOpen, setIsPopupErrorOp
       .then((res) => {
         setPrices(res);
         setIsLoading(false);
-        console.log('один');
         setIsPopupErrorOpen(false);
       })
       .catch((rej) => {
         console.log(rej);
         setErrorText('Произошла ошибка при загрузке данных');
         setIsPopupErrorOpen(true);
-        console.log('два', isPopupErrorOpen);
       })
   }
 
@@ -39,7 +37,6 @@ function TabB({ isPopupOpen, setIsPopupOpen, isPopupErrorOpen, setIsPopupErrorOp
       }
     });
     setFirstTab(tabOne);
-    console.log('1', tabOne);
   }, [prices])
 
   useEffect(() => {
