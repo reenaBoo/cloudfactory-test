@@ -5,12 +5,11 @@ import AboutImg from "../../images/aboutPic.jpg"
 function About() {
   return (
     <Root>
-    <Title>
-      PriceMonitoring
-    </Title>
+      <Title>
+        PriceMonitoring
+      </Title>
       <Text> Прожжённый трейдер с Уолл-Стрит, выпрыгнувший из окна 75-го этажа, после удара о землю
-        подпрыгнул на 10 метров, чем
-        немного отыграл свое утреннее падение.
+        подпрыгнул на 10 метров, чем немного отыграл свое утреннее падение.
       </Text>
       <AboutPic src={AboutImg} alt="Трейдинг"/>
     </Root>
