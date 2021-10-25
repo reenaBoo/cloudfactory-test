@@ -18,13 +18,11 @@ function Quotes() {
     <>
       {isPopupErrorOpen && <PopupWithError error={errorText} onClose={handleClosePopupError} />}
       <QuotesSection>
-
         <Tabs>
           <STabList>
             <STab>BTC</STab>
             <STab>USDT</STab>
           </STabList>
-
           <TabsSection>
             <TabPanel>
               <TabA errorText={errorText} setErrorText={setErrorText} isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} isPopupErrorOpen={isPopupErrorOpen} setIsPopupErrorOpen={setIsPopupErrorOpen} />
