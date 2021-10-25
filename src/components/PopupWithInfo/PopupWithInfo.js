@@ -3,7 +3,6 @@ import { Root, Close, Title, Text, Popup } from './PopupWithInfo.styles';
 
 function PopupWithInfo({ info, onClose }) {
   return (
-
     <Root>
       <Popup>
         <Close onClick={onClose}></Close>
