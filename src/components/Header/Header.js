@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Root, StyledLink } from './Header.styles';
 
 function Header() {
