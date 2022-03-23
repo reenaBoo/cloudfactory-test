@@ -1,5 +1,14 @@
 .body {
-  background-color: #faeedd;
-  height: 100%;
-  margin: 0;
+  background-color: #FCFCFB;
+  height: 100vh;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  color: #394C5A;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
 }
