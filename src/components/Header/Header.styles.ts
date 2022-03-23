@@ -2,11 +2,17 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logo from "../../images/headerlogo.svg";
 
+export const StyledHeader = styled.div`
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  background-color: #FFFFFF;
+  box-shadow: #F1F2FA 0 5px 10px;
+  width: 100%;
+`
+
 export const Root = styled.div`
   width: 1280px;
   height: 80px;
   display: flex;
-  border-bottom: 2px solid rgba(0, 0, 0, .2);
   justify-content: center;
   margin: auto;
   align-items: center;
