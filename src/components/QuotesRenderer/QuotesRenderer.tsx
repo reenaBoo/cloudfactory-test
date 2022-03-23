@@ -1,16 +1,22 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../utils/Api';
 import Table from '../Table/Table';
-import { Loader, Title } from './Quotes.styles';
+import { Loader, Title } from '../Quotes/Quotes.styles';
 import PopupWithInfo from '../PopupWithInfo/PopupWithInfo';
+import { IQuotesRenderer } from './IQuotesRenderer';
 
-
-function TabB({ isPopupOpen, setIsPopupOpen, isPopupErrorOpen, setIsPopupErrorOpen, setErrorText }) {
-  const [prices, setPrices] = useState({});
+function QuotesRenderer({
+  isPopupOpen,
+  setIsPopupOpen,
+  setIsPopupErrorOpen,
+  setErrorText,
+  regex,
+  title,
+}: IQuotesRenderer) {
+  const [prices, setPrices] = useState<any>({});
   const [info, setInfo] = useState({});
-  const [firstTab, setFirstTab] = useState([]);
+  const [tabData, setTabData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
 
   function apiMethodOne() {
     api
@@ -20,24 +26,23 @@ function TabB({ isPopupOpen, setIsPopupOpen, isPopupErrorOpen, setIsPopupErrorOp
         setIsLoading(false);
         setIsPopupErrorOpen(false);
       })
-      .catch((rej) => {
-        console.log(rej);
+      .catch((err) => {
+        console.log(err);
         setErrorText('Произошла ошибка при загрузке данных');
         setIsPopupErrorOpen(true);
-      })
+      });
   }
 
   useEffect(() => {
     const names = Object.keys(prices);
-    const regex = /^USDT/;
-    const tabOne = [];
+    const tabOne = [] as any;
     names.forEach((name) => {
       if (regex.test(name)) {
         tabOne.push(name);
       }
     });
-    setFirstTab(tabOne);
-  }, [prices])
+    setTabData(tabOne);
+  }, [prices]);
 
   useEffect(() => {
     apiMethodOne();
@@ -49,38 +54,39 @@ function TabB({ isPopupOpen, setIsPopupOpen, isPopupErrorOpen, setIsPopupErrorOp
         apiMethodOne();
       }
     }, 5000);
-    return function clear() {
+    return () => {
       clearInterval(interval);
     };
   }, [isPopupOpen]);
 
-  const handleRowClick = (name) => (evt) => {
+  const handleRowClick = (name: string) => () => {
     setIsPopupOpen(true);
     const data = {
       name,
       last: prices[name].last,
-      highestBid: prices[name].highestBid,
-      percentChange: prices[name].percentChange
-    }
+      high24hr: prices[name].high24hr,
+      percentChange: prices[name].percentChange,
+    };
     setInfo(data);
-  }
+  };
 
   function handleClosePopup() {
     setIsPopupOpen(false);
   }
 
-
   return (
     <>
       {isPopupOpen && <PopupWithInfo info={info} onClose={handleClosePopup} />}
-      {isLoading ? <Loader /> : (
+      {isLoading ? (
+        <Loader />
+      ) : (
         <>
-          <Title>Курс USDT</Title>
-          <Table prices={prices} dataNames={firstTab} onRowClick={handleRowClick} />
+          <Title>{title}</Title>
+          <Table prices={prices} dataNames={tabData} onRowClick={handleRowClick} />
         </>
       )}
     </>
-  )
+  );
 }
 
-export default TabB;
+export default QuotesRenderer;
