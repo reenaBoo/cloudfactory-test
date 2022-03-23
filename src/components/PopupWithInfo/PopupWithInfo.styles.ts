@@ -15,7 +15,7 @@ export const Root = styled.div`
 `;
 
 export const Popup = styled.div`
-  background-color: #D1E0F1;
+  background-color: #FCFCFB;
   position: relative;
   width: 600px;
   height: 400px;
@@ -24,6 +24,7 @@ export const Popup = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 30px;
+  align-items: center;
 `;
 
 export const Close = styled.div`
@@ -46,28 +47,29 @@ export const Close = styled.div`
 export const Title = styled.h2`
   font-size: 30px;
   margin: 25px auto 30px;
-  font-weight: 900;
-`;
-
-export const Text = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 0 15px 15px 30px;
-  font-size: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
-  width: max-content;
-  line-height: 1.30;
   font-weight: 700;
-  max-width: 500px;
 `;
 
-// export const Name = styled.h1`
-//   font-size: 20px;
+export const StyledTd = styled.td`
+  border-top: 1px solid rgba(34, 36, 38, 0.1);
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 18px 0;
+  text-align: center;
+  width: 50%;
+`
 
-// `;
-
-// export const Name = styled.h1`
-//   font-size: 20px;
-
-// `;
-
+export const StyledButton = styled.a`
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #0ea600;
+  border: none;
+  border-radius: 5px;
+  width: 30%;
+  margin: 18px 0;
+  text-decoration: none;
+  text-align: center;
+`

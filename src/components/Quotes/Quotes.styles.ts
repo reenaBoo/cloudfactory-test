@@ -27,25 +27,9 @@ export const Loader = styled.div`
   margin: 30px auto;
 `;
 
-export const TabStyle = styled.text`
-  text-decoration: none;
-  font-size: 20px;
-  display: block;
-`;
-
 export const Title = styled.h2`
   font-size: 30px;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 30px auto;
-`;
-
-export const CustomTab = styled.h3`
-  font-size: 20px;
-  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +45,6 @@ justify-content: center;
 margin: 0 auto;
 font-size: 16px;
 `;
-STabList.tabsRole = 'TabList';
 
 export const STab = styled(Tab)`
 margin-right: 15px;
@@ -79,4 +62,3 @@ width: 100px;
   cursor: pointer;
 }
 `;
-STab.tabsRole = 'Tab';

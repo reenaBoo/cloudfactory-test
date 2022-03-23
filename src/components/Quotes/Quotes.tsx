@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import TabB from './TabB';
-import TabA from './TabA';
 import PopupWithError from '../PopupWithError/PopupWithError';
 import { Tabs, TabPanel } from 'react-tabs';
 import { QuotesSection, TabsSection, STabList, STab } from './Quotes.styles';
+import QuotesRenderer from '../QuotesRenderer/QuotesRenderer';
 
 function Quotes() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isPopupErrorOpen, setIsPopupErrorOpen] = useState(false);
-  const [errorText, setErrorText] = useState(null);
+  const [errorText, setErrorText] = useState('');
 
   function handleClosePopupError() {
     setIsPopupErrorOpen(false);
   }
+
+  const regexUSDT = /^USDT/;
+  const regexBTC = /^BTC/;
 
   return (
     <>
@@ -25,16 +27,30 @@ function Quotes() {
           </STabList>
           <TabsSection>
             <TabPanel>
-              <TabA errorText={errorText} setErrorText={setErrorText} isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} isPopupErrorOpen={isPopupErrorOpen} setIsPopupErrorOpen={setIsPopupErrorOpen} />
+              <QuotesRenderer
+                setErrorText={setErrorText}
+                isPopupOpen={isPopupOpen}
+                setIsPopupOpen={setIsPopupOpen}
+                setIsPopupErrorOpen={setIsPopupErrorOpen}
+                regex={regexBTC}
+                title={'Курс BTC'}
+              />
             </TabPanel>
             <TabPanel>
-              <TabB errorText={errorText} setErrorText={setErrorText} isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} isPopupErrorOpen={isPopupErrorOpen} setIsPopupErrorOpen={setIsPopupErrorOpen} />
+              <QuotesRenderer
+                setErrorText={setErrorText}
+                isPopupOpen={isPopupOpen}
+                setIsPopupOpen={setIsPopupOpen}
+                setIsPopupErrorOpen={setIsPopupErrorOpen}
+                regex={regexUSDT}
+                title={'Курс USDT'}
+              />
             </TabPanel>
           </TabsSection>
         </Tabs>
       </QuotesSection>
     </>
-  )
+  );
 }
 
 export default Quotes;

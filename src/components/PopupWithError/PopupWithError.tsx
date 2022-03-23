@@ -1,16 +1,12 @@
-import React from "react";
-import { Root, Close, Title, Text, Popup } from "./PopupWithError.styles";
+import React from 'react';
+import { Root, Close, Title, Text, Popup } from './PopupWithError.styles';
+import { IPopupWithError } from './IPopupWithError';
 
-interface Props {
-  error: string;
-  onClose: () => void;
-}
-
-function PopupWithError({ error, onClose }: Props) {
+function PopupWithError({ error, onClose }: IPopupWithError) {
   return (
     <Root>
       <Popup>
-        <Close onClick={onClose}></Close>
+        <Close onClick={onClose} />
         <Title>Ошибка</Title>
         <Text>{error}</Text>
       </Popup>
