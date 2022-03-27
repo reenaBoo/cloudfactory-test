@@ -35,13 +35,13 @@ function QuotesRenderer({
 
   useEffect(() => {
     const names = Object.keys(prices);
-    const tabOne = [] as any;
+    const tabData = [] as any;
     names.forEach((name) => {
       if (regex.test(name)) {
-        tabOne.push(name);
+        tabData.push(name);
       }
     });
-    setTabData(tabOne);
+    setTabData(tabData);
   }, [prices]);
 
   useEffect(() => {
