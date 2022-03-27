@@ -4,6 +4,7 @@ import Table from '../Table/Table';
 import { Loader, Title } from '../Quotes/Quotes.styles';
 import PopupWithInfo from '../PopupWithInfo/PopupWithInfo';
 import { IQuotesRenderer } from './IQuotesRenderer';
+let renderCount = 0;
 
 function QuotesRenderer({
   isPopupOpen,
@@ -13,6 +14,7 @@ function QuotesRenderer({
   regex,
   title,
 }: IQuotesRenderer) {
+  console.warn(`🔴 isFive render: ${++renderCount}`);
   const [prices, setPrices] = useState<any>({});
   const [info, setInfo] = useState({});
   const [tabData, setTabData] = useState([]);
@@ -35,13 +37,13 @@ function QuotesRenderer({
 
   useEffect(() => {
     const names = Object.keys(prices);
-    const tabOne = [] as any;
+    const tabData = [] as any;
     names.forEach((name) => {
       if (regex.test(name)) {
-        tabOne.push(name);
+        tabData.push(name);
       }
     });
-    setTabData(tabOne);
+    setTabData(tabData);
   }, [prices]);
 
   useEffect(() => {
