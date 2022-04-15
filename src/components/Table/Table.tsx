@@ -1,18 +1,23 @@
 import { StyledTh, StyledTd, TableSection, StyledThead } from './Table.styles';
 import { ITable } from './ITable';
+import { useCallback } from 'react';
 
 function Table({ dataNames, prices, onRowClick }: ITable) {
-  const quotesChange = (name: string) => {
-    let price = prices[name].high24hr - prices[name].last;
-    if (price > 0) {
-      return <StyledTd style={{ color: '#eb4d4b' }}>{`-${price.toFixed(8)}`}</StyledTd>;
-    }
-    if (price < 0) {
-      price *= -1;
-      return <StyledTd style={{ color: '#0ea600' }}>{`+${price.toFixed(8)}`}</StyledTd>;
-    }
-    return <StyledTd>Без изменений</StyledTd>;
-  };
+  const quotesChange = useCallback(
+    (name: string) => {
+      let price = Number(
+        (((prices[name].last - prices[name].high24hr) / prices[name].last) * 100).toFixed(2),
+      );
+      if (price > 0) {
+        return <StyledTd style={{ color: '#0ea600' }}>{`+${price}%`}</StyledTd>;
+      }
+      if (price < 0) {
+        return <StyledTd style={{ color: '#eb4d4b' }}>{`${price}%`}</StyledTd>;
+      }
+      return <StyledTd>Без изменений</StyledTd>;
+    },
+    [prices],
+  );
 
   return (
     <TableSection>
@@ -20,15 +25,14 @@ function Table({ dataNames, prices, onRowClick }: ITable) {
         <tr>
           <StyledTh>Тикер</StyledTh>
           <StyledTh>Последний курс</StyledTh>
-          <StyledTh>Максимальное значение</StyledTh>
+          <StyledTh>Максимальное значение (24ч.)</StyledTh>
           <StyledTh>Изменение</StyledTh>
-          <StyledTh>Процентное изменение</StyledTh>
         </tr>
       </StyledThead>
       <tbody>
         {dataNames.map((name, index) => (
           <tr key={index + name} onClick={onRowClick(name)}>
-            <StyledTd>{name}</StyledTd>
+            <StyledTd>{name.replace('_', ' / ')}</StyledTd>
             <StyledTd
               style={{
                 color:
@@ -43,9 +47,6 @@ function Table({ dataNames, prices, onRowClick }: ITable) {
             </StyledTd>
             <StyledTd>{prices[name].high24hr}</StyledTd>
             {quotesChange(name)}
-            <StyledTd style={{ color: prices[name].percentChange >= 0 ? '#0ea600' : '#eb4d4b' }}>
-              {`${prices[name].percentChange} %`}
-            </StyledTd>
           </tr>
         ))}
       </tbody>

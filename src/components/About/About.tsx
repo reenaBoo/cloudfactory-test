@@ -1,6 +1,6 @@
 import React from 'react';
 import { Root, Title, Text, AboutPic } from './About.styles';
-import AboutImg from "../../images/aboutPic.jpg"
+import AboutImg1 from "../../images/main-picture.jpg"
 
 function About() {
   return (
@@ -11,7 +11,7 @@ function About() {
       <Text> Прожжённый трейдер с Уолл-Стрит, выпрыгнувший из окна 75-го этажа, после удара о землю
         подпрыгнул на 10 метров, чем немного отыграл свое утреннее падение.
       </Text>
-      <AboutPic src={AboutImg} alt="Трейдинг"/>
+      <AboutPic src={AboutImg1} alt="Трейдинг"/>
     </Root>
   )
 }

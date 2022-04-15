@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TableSection = styled.table`
   display: flex;
-  width: 1170px;
+  width: 1168px;
   flex-direction: column;
   margin: 0;
   table-layout: fixed;
@@ -19,13 +19,7 @@ export const StyledTh = styled.th`
   padding: 10px 0;
   font-size: 18px;
   color: #4874c7;
-  width: 230px;
-  &:first-of-type {
-    width: 200px;
-  }
-  &:last-of-type {
-    width: 280px;
-  }
+  width: 292px;
 `;
 
 export const StyledTd = styled.td`
@@ -35,13 +29,7 @@ export const StyledTd = styled.td`
   font-size: 16px;
   padding: 10px 0;
   text-align: center;
-  width: 230px;
-  &:first-of-type {
-    width: 200px;
-  }
-  &:last-of-type {
-    width: 280px;
-  }
+  width: 292px;
 `;
 
 export const StyledTr = styled.tr`

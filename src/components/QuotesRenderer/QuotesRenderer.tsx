@@ -59,13 +59,24 @@ function QuotesRenderer({
     };
   }, [isPopupOpen]);
 
+  const handlePercentChange = (name: string) => {
+    let price = Number((((prices[name].last - prices[name].high24hr) / prices[name].last) * 100).toFixed(2));
+    if (price > 0) {
+      return `+${price}%`;
+    }
+    if (price < 0) {
+      return `${price}%`;
+    }
+    return 'Без изменений';
+  };
+
   const handleRowClick = (name: string) => () => {
     setIsPopupOpen(true);
     const data = {
       name,
       last: prices[name].last,
       high24hr: prices[name].high24hr,
-      percentChange: prices[name].percentChange,
+      percentChange: handlePercentChange(name),
     };
     setInfo(data);
   };
