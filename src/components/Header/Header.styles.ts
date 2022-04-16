@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "../../images/headerlogo.svg";
+import logo from "../../assets/images/headerlogo.svg";
 
 export const StyledHeader = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, .2);

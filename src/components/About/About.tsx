@@ -1,6 +1,6 @@
 import React from 'react';
 import { Root, Title, Text, AboutPic } from './About.styles';
-import AboutImg1 from "../../images/main-picture.jpg"
+import AboutImg1 from "../../assets/images/main-picture.jpg"
 
 function About() {
   return (
