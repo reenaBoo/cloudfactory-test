@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import closeButton from "../../images/close-button.svg";
+import closeButton from "../../assets/images/close-button.svg";
 
 export const Root = styled.div`
   position: fixed;
@@ -12,6 +12,7 @@ export const Root = styled.div`
   align-items: center;
   justify-content: center;
   background:rgba(0,0,0,.8);
+  z-index: 1;
 `;
 
 export const Popup = styled.div`
