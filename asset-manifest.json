@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/crypto-test/static/css/main.75322a6e.css",
+    "main.js": "/crypto-test/static/js/main.48af6ae3.js",
+    "static/js/787.9d6f9208.chunk.js": "/crypto-test/static/js/787.9d6f9208.chunk.js",
+    "static/media/main-picture.jpg": "/crypto-test/static/media/main-picture.cd011f1490aa0dc86d0f.jpg",
+    "static/media/inter-900.ttf": "/crypto-test/static/media/inter-900.3568dbeac66690b3872e.ttf",
+    "static/media/inter-700.ttf": "/crypto-test/static/media/inter-700.e7a46b63bec151bb8369.ttf",
+    "static/media/inter-regular.ttf": "/crypto-test/static/media/inter-regular.1797891de2cd0ad3c282.ttf",
+    "static/media/inter-700.woff": "/crypto-test/static/media/inter-700.b29e9f07d570f0b28921.woff",
+    "static/media/inter-900.woff": "/crypto-test/static/media/inter-900.e8504d5c7dc7e8b208fe.woff",
+    "static/media/inter-regular.woff": "/crypto-test/static/media/inter-regular.e154f2936e843fb5568c.woff",
+    "static/media/inter-700.eot": "/crypto-test/static/media/inter-700.4c0bccc801368f5f5999.eot",
+    "static/media/inter-900.eot": "/crypto-test/static/media/inter-900.56f2b6c1487fd3f05525.eot",
+    "static/media/inter-regular.eot": "/crypto-test/static/media/inter-regular.95b0bf1369645c52d6f2.eot",
+    "static/media/inter-700.woff2": "/crypto-test/static/media/inter-700.b232970bda67c97fa661.woff2",
+    "static/media/inter-900.woff2": "/crypto-test/static/media/inter-900.99abb7dd30806b88c0f1.woff2",
+    "static/media/inter-regular.woff2": "/crypto-test/static/media/inter-regular.3450f06ef9b75d403809.woff2",
+    "static/media/loader.svg": "/crypto-test/static/media/loader.6cbd2d1b8ecd4e127dcd8e9160abb614.svg",
+    "static/media/headerlogo.svg": "/crypto-test/static/media/headerlogo.a20f21a674737ba0c8b39d966f8ee0f5.svg",
+    "index.html": "/crypto-test/index.html",
+    "static/media/close-button.svg": "/crypto-test/static/media/close-button.44bb1e48112a8752b62dd8ffbd75048c.svg",
+    "static/media/search-icon.svg": "/crypto-test/static/media/search-icon.82157fdf2eabf99c496d63bc48d9ae3f.svg",
+    "static/media/close-icon.svg": "/crypto-test/static/media/close-icon.91a3f03b23a81567f1fed67d2fd24f91.svg",
+    "main.75322a6e.css.map": "/crypto-test/static/css/main.75322a6e.css.map",
+    "main.48af6ae3.js.map": "/crypto-test/static/js/main.48af6ae3.js.map",
+    "787.9d6f9208.chunk.js.map": "/crypto-test/static/js/787.9d6f9208.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75322a6e.css",
+    "static/js/main.48af6ae3.js"
+  ]
+}
