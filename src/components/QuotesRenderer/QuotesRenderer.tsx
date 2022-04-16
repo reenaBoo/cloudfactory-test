@@ -4,6 +4,7 @@ import Table from '../Table/Table';
 import { Loader, Title } from '../Quotes/Quotes.styles';
 import PopupWithInfo from '../PopupWithInfo/PopupWithInfo';
 import { IQuotesRenderer } from './IQuotesRenderer';
+import Search from '../Search/Search';
 
 function QuotesRenderer({
   isPopupOpen,
@@ -17,6 +18,7 @@ function QuotesRenderer({
   const [info, setInfo] = useState({});
   const [tabData, setTabData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isSearch, setIsSearch] = useState(false);
 
   function apiMethodOne() {
     api
@@ -45,10 +47,12 @@ function QuotesRenderer({
   }, [prices]);
 
   useEffect(() => {
-    apiMethodOne();
+      apiMethodOne();
   }, []);
 
   useEffect(() => {
+    if (isSearch) return;
+    if (tabData.length === 1 && !isSearch) apiMethodOne();
     const interval = setInterval(function () {
       if (!isPopupOpen) {
         apiMethodOne();
@@ -57,9 +61,9 @@ function QuotesRenderer({
     return () => {
       clearInterval(interval);
     };
-  }, [isPopupOpen]);
+  }, [isPopupOpen, tabData, isSearch]);
 
-  const handlePercentChange = (name: string) => {
+  const renderPercentChange = (name: string) => {
     let price = Number((((prices[name].last - prices[name].high24hr) / prices[name].last) * 100).toFixed(2));
     if (price > 0) {
       return `+${price}%`;
@@ -76,7 +80,7 @@ function QuotesRenderer({
       name,
       last: prices[name].last,
       high24hr: prices[name].high24hr,
-      percentChange: handlePercentChange(name),
+      percentChange: renderPercentChange(name),
     };
     setInfo(data);
   };
@@ -93,6 +97,7 @@ function QuotesRenderer({
       ) : (
         <>
           <Title>{title}</Title>
+          <Search tabData={tabData} setTabData={setTabData} setIsSearch={setIsSearch} isSearch={isSearch} />
           <Table prices={prices} dataNames={tabData} onRowClick={handleRowClick} />
         </>
       )}

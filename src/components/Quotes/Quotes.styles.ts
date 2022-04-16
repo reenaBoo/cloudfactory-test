@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import loader from "../../images/loader.svg"
+import loader from "../../assets/images/loader.svg"
 import { Tab, TabList } from 'react-tabs';
 
 export const QuotesSection = styled.div`

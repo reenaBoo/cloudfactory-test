@@ -20,7 +20,7 @@ function PopupWithInfo({ onClose, info }: IPopupWithInfo) {
               <StyledTd>{info.last}</StyledTd>
             </StyledTr>
             <StyledTr>
-              <StyledTd>Максимальное значение</StyledTd>
+              <StyledTd>Максимальное значение (24ч.)</StyledTd>
               <StyledTd>{info.high24hr}</StyledTd>
             </StyledTr>
             <StyledTr>
