@@ -1,7 +1,9 @@
-.body {
+@import url(assets/fonts/fonts.css);
+
+body {
   background-color: #FCFCFB;
   height: 100vh;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
