@@ -5,7 +5,7 @@ function Header() {
   return (
     <StyledHeader>
       <Root>
-        <StyledLink to="/">О приложении</StyledLink>
+        <StyledLink to="/crypto-test">О приложении</StyledLink>
         <StyledLink to="/quotes">Котировки</StyledLink>
       </Root>
     </StyledHeader>
